@@ -1,3 +1,23 @@
 table {
     width: 100%;
- }
+    color: #212529;
+    font-weight: 300;
+    line-height: 1.5em;
+    background: #f7f7f7; }
+
+ th.mat-header-cell {
+    padding: 0;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    font-size: .95rem;
+    font-weight: 500;
+    border-top-width: 0;
+    border-bottom-width: 1px;
+    border-bottom: 2px solid rgba(0,0,0,.06);
+    color: #9c27b0!important;
+    text-align: center;
+}
+
+.large{
+    width:80%;
+}

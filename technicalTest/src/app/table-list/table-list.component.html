@@ -1,13 +1,11 @@
 <div class="container-fluid">
-    <div class="section-welcome">
-     <div class="row">
-        <mat-form-field>
+        <mat-form-field class="large">
             <mat-label>Buscar</mat-label>
             <input matInput (keyup)="filter($event)" placeholder="buscar">
           </mat-form-field>
      </div>
-     <div class="row">
           <div class="mat-elevation-z8">
+            <div class="header">Movies</div>
             <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
           
               <ng-container matColumnDef="title">
@@ -35,6 +33,3 @@
             </table>
             <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
           </div>
-     </div>
-    </div>
-    </div>
