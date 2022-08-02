@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { Data } from '../models/movies.model';
-import { MoviesService } from "../service/movies.service";
+import { MoviesService } from "../service/movies/movies.service";
 
 
 

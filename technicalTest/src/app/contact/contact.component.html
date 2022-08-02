@@ -1,1 +1,61 @@
-<p>contact works!</p>
+<div class="form-container">
+    <h1>Contactanos!</h1>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <input type="text" formControlName="name" placeholder="Nombre">
+      <div class="alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+        <div class="container-error-message"
+        *ngIf="(name.dirty || name.touched) && name.invalid && name.errors.pattern">
+            Solo se permiten números y letras.
+        </div>
+        <div class="container-error-message" *ngIf="name.errors.required">
+            Se requiere el nombre.
+        </div>
+      </div>
+  
+      <input type="email" formControlName="email" placeholder="Correo electrónico">
+  
+      <div class="alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+        <div class="container-error-message" *ngIf="email.errors.required">
+            Correo electronico es requerido.
+        </div>
+        <div class="container-error-message"
+          *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.pattern">
+          El valor debe ser una dirección de correo electrónico válida.
+        </div>
+      </div>
+
+      <input type="tel" formControlName="tel" placeholder="Teléfono" (keydown)="keyDownEvent($event)" 
+      (keyup)="keyUpEvent($event)">
+  
+      <div class="alert-danger" *ngIf="tel.invalid && (tel.dirty || tel.touched)">
+        <div class="container-error-message" *ngIf="tel.errors.required">
+            El teléfono es requerido.
+        </div>
+        <div class="container-error-message" *ngIf="tel.errors.minlength">
+            El teléfono debe tener minimo 8 caracteres.
+        </div>
+        <div class="container-error-message" *ngIf="(tel.dirty || tel.touched) && tel.invalid && tel.errors.pattern">
+            El valor debe tener un numero de teléfono valido.
+        </div>
+      </div>
+
+      <textarea formControlName="message" placeholder="Mensaje"></textarea>
+      <div class="alert-danger" *ngIf="message.invalid && (message.dirty || message.touched)">
+        <div class="container-error-message" *ngIf="message.errors.required">
+            El mensaje es obligatorio
+        </div>
+        <div class="container-error-message" *ngIf="message.errors.maxlength">
+            El mensaje debe tener máximo 20 caracteres.
+        </div>
+        <div class="container-error-message" *ngIf="message.errors.minlength">
+            El mensaje debe tener minimo 5 caracteres.
+        </div>
+      </div>
+      <button type="submit" class="btn-send" [disabled]="!contactForm.valid">Send</button>
+      <div class="alert-green" *ngIf="!exito">
+       <div class="container-error-message ">
+          Nos comunicaremos contigo
+        </div>
+    </div>
+    </form>
+  </div>
