@@ -10,11 +10,6 @@ export class MoviesService {
 
   constructor(private httpClient: HttpClient) {}
 
- /* getMovies(){
-    this.httpClient.get("assets/json/movies.json").subscribe(data =>{
-      console.log(data);      
-    })
-  }*/
 
   getMovies(): Observable<any>{
     return  this.httpClient.get("assets/json/movies.json");

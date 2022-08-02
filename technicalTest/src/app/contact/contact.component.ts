@@ -17,8 +17,7 @@ export class ContactComponent {
 
    exito = false;
 
-  constructor(
-  ) {  this.contactForm = this.createForm(); }
+  constructor(private contactService: ContactService) {  this.contactForm = this.createForm(); }
 
   get name() { return this.contactForm.get('name'); }
   get email() { return this.contactForm.get('email'); }
@@ -40,7 +39,6 @@ export class ContactComponent {
 
   onResetForm(): void {
     this.contactForm.reset();
-    this.exito = true;
   }
 
   onSubmit(): void {
@@ -48,8 +46,12 @@ export class ContactComponent {
       this.contactForm.value.tel = this.plainText;
       //this.dbData.saveMessage(this.contactForm.value);
       console.log(this.contactForm.value);
-      let body = this.contactForm.value;
-      this.onResetForm();
+      
+      this.contactService.createContact(this.contactForm.value).subscribe(
+        data => console.log('success', data),
+        error => console.log('oops la Api no es real', error)
+      )
+
     }
   }
 
