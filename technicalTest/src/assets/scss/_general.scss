@@ -1,0 +1,55 @@
+.pull-left {
+    float: left;
+  }
+  
+  .pull-right {
+    float: right;
+  }
+
+  .container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  a {
+    color:$purple;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font: 15px/1.3 'Open Sans', sans-serif;
+    color: #3C4858;;
+    text-align: center;
+  }
+  
+  a {
+    outline: none;
+    color: white;
+  
+    &:visited {
+      outline: none;
+      color: white;
+    }
+  
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  
+  section, footer, header, aside {
+    display: block;
+  }
+
+  .wrapper {
+    position: relative;
+    top: 0;
+    height: 100vh;
+}
+  

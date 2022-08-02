@@ -1,1 +1,10 @@
-<p>layout works!</p>
+<div class="wrapper">
+    <div class="sidebar" data-color="pink" data-background-color="white" data-image="./assets/img/sidebar-3.jpg">
+        <app-navbar></app-navbar>
+    <div class="sidebar-background" style="background-image: url(./assets/img/sidebar-3.jpg)"></div>
+</div>
+<div class="main-panel">
+    <app-toolbar></app-toolbar>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+</div>
