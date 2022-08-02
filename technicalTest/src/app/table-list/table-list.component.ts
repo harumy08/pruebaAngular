@@ -1,7 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 import { Data } from '../models/movies.model';
 import { MoviesService } from "../service/movies.service";
+
 
 
 
@@ -20,17 +22,19 @@ export class TableListComponent  {
 
   dataSource:any; 
 
+  @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
+
 
   ngOnInit() {
-   //this.dataSource = new MatTableDataSource(this.data);
-   //this.movieService.getMovies();
 
-   this.movieService.getMovies().subscribe(data => {
+  /* this.movieService.getMovies().subscribe(data => {
     this.dataSource = data;
-  });
+  });*/
 
   this.movieService.getMovies().subscribe(data => {
-    this.dataSource = new MatTableDataSource(data);
+   // this.dataSource = new MatTableDataSource(data);
+    this.dataSource = new MatTableDataSource<Data>(data);
+    this.dataSource.paginator = this.paginator;
   });
   }
 

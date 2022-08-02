@@ -8,6 +8,7 @@ import { TableListComponent } from '../table-list/table-list.component';
 import { ContactComponent } from '../contact/contact.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { MatInputModule } from '@angular/material/input';
     FormsModule,
     ReactiveFormsModule,
     MatTableModule,
-    MatInputModule
+    MatInputModule,
+    MatPaginatorModule
   ],
   declarations: [
     WelcomeComponent,
