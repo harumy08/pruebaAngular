@@ -1,1 +1,39 @@
-<p>table-list works!</p>
+<div class="container-fluid">
+    <div class="section-welcome">
+     <div class="row">
+        <mat-form-field>
+            <mat-label>Buscar</mat-label>
+            <input matInput (keyup)="filter($event)" placeholder="buscar">
+          </mat-form-field>
+     </div>
+     <div class="row">
+          <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          
+              <ng-container matColumnDef="title">
+                <th mat-header-cell *matHeaderCellDef> Titulo </th>
+                <td mat-cell *matCellDef="let movie"> {{movie.title}} </td>
+              </ng-container>
+          
+              <ng-container matColumnDef="year">
+                <th mat-header-cell *matHeaderCellDef> Año </th>
+                <td mat-cell *matCellDef="let movie"> {{movie.year}} </td>
+              </ng-container>
+          
+              <ng-container matColumnDef="cast">
+                <th mat-header-cell *matHeaderCellDef> Casting </th>
+                <td mat-cell *matCellDef="let movie"> {{movie.cast}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="genres">
+                <th mat-header-cell *matHeaderCellDef> Genero </th>
+                <td mat-cell *matCellDef="let movie"> {{movie.genres}} </td>
+              </ng-container>
+          
+              <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+              <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+            </table>
+          </div>
+     </div>
+    </div>
+    </div>

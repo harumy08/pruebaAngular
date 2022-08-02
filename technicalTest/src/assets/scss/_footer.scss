@@ -16,4 +16,20 @@
   .footer .copyright {
     padding: 15px 0;
   }
+
+  .footer ul li a {
+    color: inherit;
+    padding: 0.9375rem;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    text-decoration: none;
+    position: relative;
+    display: block;
+}
+
+.footer ul li{
+  list-style: none;
+}
  

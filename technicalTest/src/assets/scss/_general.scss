@@ -8,15 +8,19 @@
 
   .container-fluid {
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
   }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
   
-  a {
-    color:$purple;
-  }
+
 
   * {
     margin: 0;
@@ -28,14 +32,15 @@
     color: #3C4858;;
     text-align: center;
   }
-  
   a {
     outline: none;
-    color: white;
+    color: $purple;
+    text-decoration: none;
   
     &:visited {
       outline: none;
-      color: white;
+      text-decoration: none;
+      color: $purple;
     }
   
     &:hover {
@@ -51,5 +56,18 @@
     position: relative;
     top: 0;
     height: 100vh;
+}
+
+.main-panel {
+  position: relative;
+  float: right;
+  width: calc(100% - 310px);
+  transition: 0.33s, cubic-bezier(0.685, 0.0473, 0.346, 1);
+}
+
+.main-panel .main-content {
+    margin-top: 70px;
+    padding: 30px 15px;
+    min-height: calc(100vh - 123px);
 }
   
