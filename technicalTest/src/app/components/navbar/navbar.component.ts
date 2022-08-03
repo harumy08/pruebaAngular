@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+//Se declara una pequeña interface, para usar el menu de una manera más dinamica, de crecer el proyecto, se debería crear
+//en archivos independientes
 
 declare const $: any;
 declare interface RouteInfo {
@@ -6,6 +8,8 @@ declare interface RouteInfo {
     title: string;
     class: string;
 }
+
+//Se declara una interface para adjuntar propiedades al menu, a partir de aqui se puede agregar iconos,etc
 export const ROUTES: RouteInfo[] = [
     { path: '/welcome', title: 'Welcome',  class: '' },
     { path: '/table-list', title: 'Movies',  class: '' },
@@ -26,12 +30,5 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
   }
-
-  isMobileMenu() {
-    if ($(window).width() > 991) {
-        return false;
-    }
-    return true;
-};
 
 }

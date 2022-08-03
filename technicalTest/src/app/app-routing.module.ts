@@ -14,6 +14,7 @@ const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
+    //Se usa loadchildren para que tenga carga diferida y sobre este modulo se pueden encontrar las rutas respectivas
     children: [{
       path: '',
       loadChildren: () => import('./layout/layout.module').then(m => m.LayoutModule)

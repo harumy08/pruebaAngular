@@ -21,3 +21,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     ]
   })
   export class ComponentsModule { }
+
+
+  //En este componente se mandan a llamar, los componentes de utilidad, footer, navbar en este caso, de escalarse el proyecto, pueden
+  //integrarse aqui headers, navbars, toolbar, etc. Componentes que formar parte de nuestro Layout, vista y componente padre de nuestro admin
