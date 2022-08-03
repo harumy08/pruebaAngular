@@ -18,8 +18,10 @@ https://nodejs.org/en/download/
 
 ## Installation
 
-1. Clone this project
-2. cd technicalTest
+1.Clone this project
+
+2.cd technicalTest
+
 3.To install node_modules and other dependencies and development dependencies, run:
 
   npm install
